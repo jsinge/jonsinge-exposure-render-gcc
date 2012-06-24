@@ -58,7 +58,7 @@ QTransferFunctionItem::QTransferFunctionItem(const QTransferFunctionItem& Other)
 	*this = Other;
 }
 
-QTransferFunctionItem& QTransferFunctionItem::operator=(const QTransferFunctionItem& Other)
+QTransferFunctionItem& operator=(const QTransferFunctionItem& Other)
 {
 	m_pTransferFunction	= Other.m_pTransferFunction;
 	m_BrushEnabled		= Other.m_BrushEnabled;

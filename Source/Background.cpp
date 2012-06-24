@@ -36,7 +36,7 @@ QBackground::QBackground(const QBackground& Other)
 	*this = Other;
 };
 
-QBackground& QBackground::operator=(const QBackground& Other)
+QBackground& operator=(const QBackground& Other)
 {
 	QPresetXML::operator=(Other);
 

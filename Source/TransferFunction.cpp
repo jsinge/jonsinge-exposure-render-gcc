@@ -38,7 +38,7 @@ QTransferFunction::QTransferFunction(const QTransferFunction& Other)
 	*this = Other;
 };
 
-QTransferFunction& QTransferFunction::operator = (const QTransferFunction& Other)			
+QTransferFunction& operator = (const QTransferFunction& Other)
 {
 	QPresetXML::operator=(Other);
 

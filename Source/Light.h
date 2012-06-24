@@ -25,7 +25,7 @@ public:
 
 	QLight::QLight(const QLight& Other);
 	
-	QLight& QLight::operator=(const QLight& Other);
+    QLight& operator=(const QLight& Other);
 
 	bool operator == (const QLight& Other) const;
 

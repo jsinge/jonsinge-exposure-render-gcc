@@ -26,7 +26,7 @@ QAperture::QAperture(const QAperture& Other)
 	*this = Other;
 }
 
-QAperture& QAperture::operator=(const QAperture& Other)
+QAperture& operator=(const QAperture& Other)
 {
 	QPresetXML::operator=(Other);
 
