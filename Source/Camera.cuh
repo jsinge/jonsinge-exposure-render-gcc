@@ -254,7 +254,7 @@ public:
 	CAperture			m_Aperture;
 	bool				m_Dirty;
 
-	HOD CCamera(void)
+    CCamera(void)
 	{
 		m_Hither				= DEF_CAMERA_HITHER;
 		m_Yon					= DEF_CAMERA_YON;
