@@ -35,7 +35,8 @@ public:
 
         HO CTiming& operator=(const CTiming& Other)
 		{
-				strcpy_s(m_Name, Other.m_Name);
+                //strcpy_s(m_Name, Other.m_Name);
+                strcpy(m_Name, Other.m_Name);
 		
 					for (int i = 0; i < MAX_NO_DURATIONS; i++)
 					{
