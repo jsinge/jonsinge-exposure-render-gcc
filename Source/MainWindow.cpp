@@ -251,8 +251,10 @@ void CMainWindow::Open(QString FilePath)
 	// Window name update
 	SetCurrentFile(FilePath);
 
-	// Make string suitable for VTK
-	FilePath.replace("/", "\\\\");
+    // Make string suitable for VTK
+    #ifdef WIN32
+        FilePath.replace("/", "\\\\");
+    #endif
 
  	if (!FilePath.isEmpty())
  		StartRenderThread(FilePath);
