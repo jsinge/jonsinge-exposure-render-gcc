@@ -25,7 +25,7 @@ make install
 $CMAKE_INSTALL_PREFIX/bin/ExposureRenderer
 
 
-=== Known Problems ===
+=== Known Installation Problems ===
 Problem: compiler error - include cutil_math.h not found
 Solution: This file is not installed with a default CUDA library installation, but with the CUDA SDK C/C++ Code Samples
 They are available at http://developer.nvidia.com/cuda-cc-sdk-code-samples
