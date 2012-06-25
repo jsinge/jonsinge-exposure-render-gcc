@@ -1004,7 +1004,7 @@ public:
 
 	void PrintSelf(void)
 	{
-		printf("[%d, %d, %d, %d]\n", x, y, z, w);
+        printf("[%f, %f, %f, %f]\n", x, y, z, w);
 	}
 
 	float x, y, z, w;
