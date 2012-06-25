@@ -25,11 +25,11 @@ public:
 	QLighting(QObject* pParent = NULL);
 	virtual ~QLighting(void);
 
-	QLighting::QLighting(const QLighting& Other);
+    QLighting(const QLighting& Other);
 
     QLighting& operator=(const QLighting& Other);
 	
-	void				AddLight(QLight& Light);
+    void				AddLight(const QLight& Light);
 	void				RemoveLight(QLight* pLight);
 	void				RemoveLight(const int& Index);
 	void				CopyLight(QLight* pLight);
@@ -42,7 +42,7 @@ public:
 	QLight*				GetSelectedLight(void);
 	void				SelectPreviousLight(void);
 	void				SelectNextLight(void);
-	void				ReadXML(QDomElement& Parent);
+    void				ReadXML(const QDomElement& Parent);
 	QDomElement			WriteXML(QDomDocument& DOM, QDomElement& Parent);
 	static QLighting	Default(void);
 

@@ -47,7 +47,7 @@ public:
 	QRenderThread(const QString& FileName = "", QObject* pParent = NULL);
 	QRenderThread(const QRenderThread& Other);
 	virtual ~QRenderThread(void);
-	QRenderThread& QRenderThread::operator=(const QRenderThread& Other);
+    QRenderThread& operator=(const QRenderThread& Other);
 
 	void run();
 

@@ -36,7 +36,7 @@ QBackground::QBackground(const QBackground& Other)
 	*this = Other;
 };
 
-QBackground& operator=(const QBackground& Other)
+QBackground& QBackground::operator=(const QBackground& Other)
 {
 	QPresetXML::operator=(Other);
 
@@ -137,7 +137,7 @@ void QBackground::SetFile(const QString& File)
 	emit Changed();
 }
 
-void QBackground::ReadXML(QDomElement& Parent)
+void QBackground::ReadXML(const QDomElement& Parent)
 {
 	QPresetXML::ReadXML(Parent);
 

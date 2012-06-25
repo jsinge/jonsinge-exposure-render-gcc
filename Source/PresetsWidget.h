@@ -218,7 +218,7 @@ public:
 			m_Presets.append(NewPreset);
 
 			// Load the preset into it
-			m_Presets.back().ReadXML(Node.toElement());
+            m_Presets.back().ReadXML(Node.toElement());
 		}
 
 		XmlFile.close();
@@ -296,7 +296,7 @@ public:
 		UpdatePresetsList();
 	};
 
-	void InsertPreset(const int& Index, T& Preset)
+    void InsertPreset(const int& Index, const T& Preset)
 	{
 		m_Presets.insert(Index, Preset);
 

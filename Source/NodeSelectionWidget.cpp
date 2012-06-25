@@ -99,7 +99,7 @@ QNodeSelectionWidget::QNodeSelectionWidget(QWidget* pParent) :
 
 	SetupSelectionUI();
 
-	OnNodeSelectionChanged(NULL);
+    OnNodeSelectionChanged( static_cast<QNode*>(NULL) );
 }
 
 void QNodeSelectionWidget::OnNodeSelectionChanged(QNode* pNode)

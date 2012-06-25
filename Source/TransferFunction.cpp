@@ -38,7 +38,7 @@ QTransferFunction::QTransferFunction(const QTransferFunction& Other)
 	*this = Other;
 };
 
-QTransferFunction& operator = (const QTransferFunction& Other)
+QTransferFunction& QTransferFunction::operator = (const QTransferFunction& Other)
 {
 	QPresetXML::operator=(Other);
 
@@ -63,7 +63,7 @@ QTransferFunction& operator = (const QTransferFunction& Other)
 	// Notify others that the function has changed selection has changed
 	emit Changed();
 
-	SetSelectedNode(NULL);
+    SetSelectedNode( static_cast<QNode*>(NULL) );
 
 	return *this;
 }
@@ -320,7 +320,7 @@ void QTransferFunction::SetGradientFactor(const float& GradientFactor)
 	emit Changed();
 }
 
-void QTransferFunction::ReadXML(QDomElement& Parent)
+void QTransferFunction::ReadXML(const QDomElement& Parent)
 {
 	QPresetXML::ReadXML(Parent);
 

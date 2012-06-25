@@ -21,7 +21,7 @@ class QFocus : public QPresetXML
 
 public:
 	QFocus(QObject* pParent = NULL);
-	QFocus::QFocus(const QFocus& Other);
+    QFocus(const QFocus& Other);
     QFocus& operator=(const QFocus& Other);
 
 	int			GetType(void) const;
@@ -29,7 +29,7 @@ public:
 	float		GetFocalDistance(void) const;
 	void		SetFocalDistance(const float& FocalDistance);
 	void		Reset(void);
-	void		ReadXML(QDomElement& Parent);
+    void		ReadXML(const QDomElement& Parent);
 	QDomElement	WriteXML(QDomDocument& DOM, QDomElement& Parent);
 
 signals:

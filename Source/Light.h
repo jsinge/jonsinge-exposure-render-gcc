@@ -23,7 +23,7 @@ public:
 	QLight(QObject* pParent = NULL);
 	virtual ~QLight(void);
 
-	QLight::QLight(const QLight& Other);
+    QLight(const QLight& Other);
 	
     QLight& operator=(const QLight& Other);
 
@@ -45,7 +45,7 @@ public:
 	void			SetColor(const QColor& Color);
 	float			GetIntensity(void) const;
 	void			SetIntensity(const float& Intensity);
-	void			ReadXML(QDomElement& Parent);
+    void			ReadXML(const QDomElement& Parent);
 	QDomElement		WriteXML(QDomDocument& DOM, QDomElement& Parent);
 
 	static QLight	Default(void);

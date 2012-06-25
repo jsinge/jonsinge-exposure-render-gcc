@@ -113,7 +113,7 @@ void QStartupDialog::accept()
 
 void QStartupDialog::LoadReadMe(const QString& FileName)
 {
-	QFile File(QApplication::applicationDirPath() + "/Readme.txt");
+    QFile File(QApplication::applicationDirPath() + "/ReadMe.txt");
 
 	if (!File.open(QIODevice::ReadOnly | QIODevice::Text))
 	{

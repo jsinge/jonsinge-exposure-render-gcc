@@ -28,7 +28,7 @@ class QCamera : public QPresetXML
 public:
 	QCamera(QObject* pParent = NULL);
 	virtual ~QCamera(void);
-	QCamera::QCamera(const QCamera& Other);
+    QCamera(const QCamera& Other);
     QCamera& operator=(const QCamera& Other);
 
 	QFilm&			GetFilm(void);
@@ -45,7 +45,7 @@ public:
 	void			SetTarget(const Vec3f& Target);
 	Vec3f			GetUp(void) const;
 	void			SetUp(const Vec3f& Up);
-	void			ReadXML(QDomElement& Parent);
+    void			ReadXML(const QDomElement& Parent);
 	QDomElement		WriteXML(QDomDocument& DOM, QDomElement& Parent);
 	static QCamera	Default(void);
 

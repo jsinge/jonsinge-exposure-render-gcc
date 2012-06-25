@@ -26,7 +26,7 @@ QAperture::QAperture(const QAperture& Other)
 	*this = Other;
 }
 
-QAperture& operator=(const QAperture& Other)
+QAperture& QAperture::operator=(const QAperture& Other)
 {
 	QPresetXML::operator=(Other);
 
@@ -56,7 +56,7 @@ void QAperture::Reset(void)
 	emit Changed(*this);
 }
 
-void QAperture::ReadXML(QDomElement& Parent)
+void QAperture::ReadXML(const QDomElement& Parent)
 {
 	m_Size = Parent.firstChildElement("Size").attribute("Value").toFloat();
 }

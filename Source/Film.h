@@ -21,7 +21,7 @@ class QFilm : public QPresetXML
 
 public:
 	QFilm(QObject* pParent = NULL);
-	QFilm::QFilm(const QFilm& Other);
+    QFilm(const QFilm& Other);
     QFilm& operator=(const QFilm& Other);
 
 	int				GetWidth(void) const;
@@ -34,7 +34,7 @@ public:
 	void			SetNoiseReduction(const bool& NoiseReduction);
 	bool			IsDirty(void) const;
 	void			UnDirty(void);
-	void			ReadXML(QDomElement& Parent);
+    void			ReadXML(const QDomElement& Parent);
 	QDomElement		WriteXML(QDomDocument& DOM, QDomElement& Parent);
 
 signals:

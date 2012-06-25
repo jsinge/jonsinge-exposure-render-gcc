@@ -71,7 +71,7 @@ void QLighting::OnBackgroundChanged(void)
 	emit Changed();
 }
 
-void QLighting::AddLight(QLight& Light)
+void QLighting::AddLight(const QLight& Light)
 {
 	// Add to list
 	m_Lights.append(Light);
@@ -101,7 +101,7 @@ void QLighting::RemoveLight(QLight* pLight)
 	m_pSelectedLight = NULL;
 
 	// Deselect
-	SetSelectedLight(NULL);
+    SetSelectedLight(static_cast<QLight*>(NULL));
 
 	// Let others know the lighting has changed
 	emit Changed();
@@ -224,9 +224,9 @@ void QLighting::RenameLight(const int& Index, const QString& Name)
 	emit Changed();
 }
 
-void QLighting::ReadXML(QDomElement& Parent)
+void QLighting::ReadXML(const QDomElement& Parent)
 {
-	SetSelectedLight(NULL);
+    SetSelectedLight( static_cast<QLight*>(NULL) );
 
 	QPresetXML::ReadXML(Parent);
 
