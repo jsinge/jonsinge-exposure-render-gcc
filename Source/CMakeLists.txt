@@ -614,12 +614,16 @@ FILE(GLOB VtkDlls "${VTK_DIR}/bin/RelWithDebInfo/*.dll")
 INSTALL_FILES(/bin FILES ${VtkDlls})
 
 ### CUDA dependencies ###
-SET(CudaDlls ${CUDA_TOOLKIT_ROOT_DIR}/bin/cudart32_40_17.dll)
-INSTALL_FILES(/bin FILES ${CudaDlls})
+IF(WIN32)
+    SET(CudaDlls ${CUDA_TOOLKIT_ROOT_DIR}/bin/cudart32_40_17.dll)
+    INSTALL_FILES(/bin FILES ${CudaDlls})
+ENDIF(WIN32)
 
 ### QT dependencies ###
-SET(QtDlls ${QT_BINARY_DIR}/QtCore4.dll ${QT_BINARY_DIR}/QtGui4.dll ${QT_BINARY_DIR}/QtXml4.dll ${QT_BINARY_DIR}/QtSql4.dll ${QT_BINARY_DIR}/QtNetwork4.dll)
-INSTALL_FILES(/bin FILES ${QtDlls})
+IF(WIN32)
+    SET(QtDlls ${QT_BINARY_DIR}/QtCore4.dll ${QT_BINARY_DIR}/QtGui4.dll ${QT_BINARY_DIR}/QtXml4.dll ${QT_BINARY_DIR}/QtSql4.dll ${QT_BINARY_DIR}/QtNetwork4.dll)
+    INSTALL_FILES(/bin FILES ${QtDlls})
+ENDIF(WIN32)
 
 ### Example .mhd and .raw files ###
 FILE(GLOB Examples "${CMAKE_CURRENT_SOURCE_DIR}/Examples/*.*")
