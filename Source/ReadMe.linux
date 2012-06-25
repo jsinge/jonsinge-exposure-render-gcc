@@ -1,0 +1,37 @@
+=== About ===
+This is an adaption of the Exposure Renderer Software (see Readme.txt) to gcc/unix.
+It was tested only on my own system (Ubuntu 12.04, gcc 4.6.3).
+Feel free to contact me if you have trouble running this on a different system
+Jonas Singe <jonsinge@freenet.de>
+
+
+=== Installation ===
+Example procedure:
+
+cd ExposureRenderer
+mkdir Build
+cd Build
+
+# configure cmake:
+# don't forget to set CUDA_SDK_ROOT_DIR (see Known Problems) and CMAKE_INSTALL_PREFIX
+ccmake ../Source
+
+
+make
+# install is necessary to copy binary and all necessary files (icons, examples, presets) into the same directory
+make install
+
+# run program
+$CMAKE_INSTALL_PREFIX/bin/ExposureRenderer
+
+
+=== Known Problems ===
+Problem: compiler error - include cutil_math.h not found
+Solution: This file is not installed with a default CUDA library installation, but with the CUDA SDK C/C++ Code Samples
+They are available at http://developer.nvidia.com/cuda-cc-sdk-code-samples
+After installing the samples, configure cmake so that CUDA_SDK_ROOT_DIR points to the sdk directory
+The default path is: ~/NVIDIA_GPU_Computing_SDK/C
+
+Problem: program doesn't start - library libcudart.so.4 not found
+Solution: add a link to libcudart.so.4 to your /usr/lib directory, for example:
+sudo ln -s /usr/local/cuda/lib64/libcudart.so.4 /usr/lib/libcudart.so.4
